@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog — Brookside School</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <style>
+      body {
+        background: #f9f9f9;
+      }
+      .post-excerpt {
+        color: #374151;
+      }
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+    </style>
+  </head>
+  <body class="bg-[#f9f9f9] text-white">
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-20 shadow-md bg-black/50 backdrop-blur-lg"
+    >
+      <div
+        class="container mx-auto px-6 py-3 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="img/logo.png" alt="Logo" class="h-10 w-10" />
+          <h1 class="text-2xl font-semibold text-white">Brookside School</h1>
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-white hover:text-[#d4a017]">Home</a>
+          <a href="courses.html" class="text-white hover:text-[#d4a017]"
+            >Activities</a
+          >
+          <a href="about.html" class="text-[#d4a017] font-semibold">About Us</a>
+          <a href="events.html" class="text-white hover:text-[#d4a017]"
+            >Events</a
+          >
+          <a href="blog.html" class="text-white hover:text-[#d4a017]">Blog</a>
+          <a href="contacts.html" class="text-white hover:text-[#d4a017]"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Desktop Apply Button -->
+        <div class="hidden md:flex items-center gap-4">
+          <a
+            href="apply.html"
+            class="bg-[#8c1d23] hover:bg-[#a72b33] text-white font-semibold px-8 py-3 rounded-full transition"
+          >
+            APPLY NOW
+          </a>
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button id="menuBtn" class="md:hidden text-white">
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU DROPDOWN -->
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden flex flex-col bg-black/95 text-white space-y-4 py-6 px-6 absolute top-full left-0 w-full z-30"
+      >
+        <a href="index.html" class="block text-lg hover:text-[#d4a017]">Home</a>
+        <a href="courses.html" class="block text-lg hover:text-[#d4a017]"
+          >Activities</a
+        >
+        <a href="about.html" class="block text-lg hover:text-[#d4a017]"
+          >About Us</a
+        >
+        <a href="events.html" class="block text-lg hover:text-[#d4a017]"
+          >Events</a
+        >
+        <a href="blog.html" class="block text-lg hover:text-[#d4a017]">Blog</a>
+        <a href="contacts.html" class="block text-lg hover:text-[#d4a017]"
+          >Contact</a
+        >
+
+        <a
+          href="apply.html"
+          class="block bg-[#8c1d23] text-white text-center py-3 rounded-full font-semibold mt-2"
+        >
+          APPLY NOW
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      class="relative min-h-[50vh] bg-cover bg-center flex items-center justify-start"
+      style="
+        background-image: url('img/events.avif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      "
+    >
+      <!-- Text Goes ABOVE overlay -->
+      <div class="container mx-auto px-6 py-20 text-white relative z-10">
+        <div class="max-w-3xl">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            From Our Campus
+            <span class="text-[#8c1d23]">Blog</span>
+          </h2>
+          <p class="text-lg text-gray-200">
+            News, stories and updates from Brookside School — student life,
+            events, learning tips and more.
+          </p>
+        </div>
+      </div>
+
+      <!-- Overlay goes BELOW everything -->
+      <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+    </section>
+
+    <!-- MAIN CONTENT: posts + sidebar -->
+    <main class="container mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <!-- POSTS COLUMN (2/3 wide) -->
+        <section class="lg:col-span-2 space-y-8">
+          <!-- Featured post -->
+          <article
+            class="bg-white rounded-lg overflow-hidden shadow card-hover"
+            data-aos="fade-up"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2">
+              <div
+                class="h-64 md:h-auto bg-cover bg-center"
+                style="background-image: url('img/1.jpg')"
+              ></div>
+              <div class="p-8">
+                <div class="flex items-center gap-3 text-sm text-gray-500 mb-3">
+                  <span>By <strong>Admin</strong></span>
+                  <span>&middot;</span>
+                  <span>Nov 10, 2025</span>
+                  <span class="ml-2"
+                    >&middot; <span class="font-medium">Campus Life</span></span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3">
+                  Welcome back to school: A new term, new opportunities
+                </h3>
+                <p class="post-excerpt mb-6">
+                  We are excited to welcome students back to campus. This term
+                  we launch new clubs, upgraded labs and a refreshed library
+                  space designed for collaboration and research.
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-[#8c1d23] text-white px-5 py-2 rounded font-semibold"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Posts grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Post card -->
+            <article
+              class="bg-white rounded-lg overflow-hidden shadow card-hover p-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="img/2.jpg"
+                alt="post"
+                class="w-full h-40 object-cover rounded mb-4"
+              />
+              <div class="text-sm text-gray-500 mb-2">
+                By <strong>Teacher</strong> &middot; Oct 28, 2025 &middot;
+                Academics
+              </div>
+              <h4 class="font-semibold text-lg mb-2">
+                How we redesigned the science lab for hands-on learning
+              </h4>
+              <p class="text-sm text-gray-600 mb-4">
+                A walkthrough of the upgrades we made to support practical
+                experiments and student-led research.
+              </p>
+              <a href="#" class="text-[#8c1d23] font-medium">Read more →</a>
+            </article>
+
+            <article
+              class="bg-white rounded-lg overflow-hidden shadow card-hover p-4"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <img
+                src="img/3.jpg"
+                alt="post"
+                class="w-full h-40 object-cover rounded mb-4"
+              />
+              <div class="text-sm text-gray-500 mb-2">
+                By <strong>Events</strong> &middot; Sep 12, 2025 &middot; Events
+              </div>
+              <h4 class="font-semibold text-lg mb-2">
+                Harvest festival 2025 — highlights and photos
+              </h4>
+              <p class="text-sm text-gray-600 mb-4">
+                A celebration of achievements, music, art and our student
+                performances.
+              </p>
+              <a href="#" class="text-[#8c1d23] font-medium">Read more →</a>
+            </article>
+
+            <article
+              class="bg-white rounded-lg overflow-hidden shadow card-hover p-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                src="img/4.jpg"
+                alt="post"
+                class="w-full h-40 object-cover rounded mb-4"
+              />
+              <div class="text-sm text-gray-500 mb-2">
+                By <strong>Counselling</strong> &middot; Aug 02, 2025 &middot;
+                Wellbeing
+              </div>
+              <h4 class="font-semibold text-lg mb-2">
+                5 tips for students to balance study and wellbeing
+              </h4>
+              <p class="text-sm text-gray-600 mb-4">
+                Simple routines and practical advice to stay focused and healthy
+                during exams.
+              </p>
+              <a href="#" class="text-[#8c1d23] font-medium">Read more →</a>
+            </article>
+
+            <article
+              class="bg-white rounded-lg overflow-hidden shadow card-hover p-4"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <img
+                src="img/5.jpg"
+                alt="post"
+                class="w-full h-40 object-cover rounded mb-4"
+              />
+              <div class="text-sm text-gray-500 mb-2">
+                By <strong>Alumni</strong> &middot; Jul 22, 2025 &middot;
+                Stories
+              </div>
+              <h4 class="font-semibold text-lg mb-2">
+                Alumni spotlight: From Brookside to Tech careers
+              </h4>
+              <p class="text-sm text-gray-600 mb-4">
+                Meet Maria — a 2018 graduate now building software that helps
+                learners in Uganda.
+              </p>
+              <a href="#" class="text-[#8c1d23] font-medium">Read more →</a>
+            </article>
+          </div>
+
+          <!-- Pagination -->
+          <div class="flex items-center justify-center mt-6">
+            <nav class="inline-flex -space-x-px">
+              <a
+                href="#"
+                class="px-4 py-2 border border-gray-300 bg-white text-gray-700"
+                >Prev</a
+              >
+              <a
+                href="#"
+                class="px-4 py-2 border-t border-b border-gray-300 bg-white text-[#8c1d23] font-semibold"
+                >1</a
+              >
+              <a
+                href="#"
+                class="px-4 py-2 border border-gray-300 bg-white text-gray-700"
+                >2</a
+              >
+              <a
+                href="#"
+                class="px-4 py-2 border border-gray-300 bg-white text-gray-700"
+                >Next</a
+              >
+            </nav>
+          </div>
+        </section>
+
+        <!-- SIDEBAR -->
+        <aside class="space-y-6">
+          <!-- Search -->
+          <div class="bg-white p-4 rounded-lg shadow" data-aos="fade-left">
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Search posts</label
+            >
+            <div class="flex">
+              <input
+                type="search"
+                placeholder="Search..."
+                class="flex-grow px-3 py-2 border rounded-l focus:outline-none"
+              />
+              <button class="bg-[#8c1d23] text-white px-4 rounded-r">
+                Search
+              </button>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div
+            class="bg-white p-4 rounded-lg shadow"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <h4 class="font-semibold mb-3">Categories</h4>
+            <ul class="text-sm space-y-2 text-gray-600">
+              <li>
+                <a href="#" class="hover:text-[#8c1d23]">Campus Life (12)</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#8c1d23]">Academics (8)</a>
+              </li>
+              <li><a href="#" class="hover:text-[#8c1d23]">Events (6)</a></li>
+              <li>
+                <a href="#" class="hover:text-[#8c1d23]">Wellbeing (4)</a>
+              </li>
+              <li><a href="#" class="hover:text-[#8c1d23]">Alumni (3)</a></li>
+            </ul>
+          </div>
+
+          <!-- Recent posts -->
+          <div
+            class="bg-white p-4 rounded-lg shadow"
+            data-aos="fade-left"
+            data-aos-delay="150"
+          >
+            <h4 class="font-semibold mb-4">Recent posts</h4>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-3">
+                <img
+                  src="img/6.jpg"
+                  alt="r1"
+                  class="w-16 h-12 object-cover rounded"
+                />
+                <div>
+                  <a href="#" class="font-medium text-gray-800"
+                    >Exam season: Study timetables that work</a
+                  >
+                  <div class="text-xs text-gray-500">Oct 05, 2025</div>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <img
+                  src="img/7.jpg"
+                  alt="r2"
+                  class="w-16 h-12 object-cover rounded"
+                />
+                <div>
+                  <a href="#" class="font-medium text-gray-800"
+                    >Library reopening: new resources</a
+                  >
+                  <div class="text-xs text-gray-500">Sep 18, 2025</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter CTA -->
+          <div
+            class="bg-[#8c1d23] text-white p-5 rounded-lg shadow"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <h4 class="font-semibold mb-2">Stay updated</h4>
+            <p class="text-sm mb-4">
+              Subscribe to receive weekly updates from our blog.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="flex-grow px-3 py-2 rounded-l text-gray-800"
+              />
+              <button
+                class="bg-white text-[#8c1d23] px-4 rounded-r font-semibold"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <!-- Tags -->
+          <div
+            class="bg-white p-4 rounded-lg shadow"
+            data-aos="fade-left"
+            data-aos-delay="250"
+          >
+            <h4 class="font-semibold mb-3">Tags</h4>
+            <div class="flex flex-wrap gap-2">
+              <a href="#" class="text-sm px-3 py-1 border rounded text-gray-600"
+                >students</a
+              >
+              <a href="#" class="text-sm px-3 py-1 border rounded text-gray-600"
+                >events</a
+              >
+              <a href="#" class="text-sm px-3 py-1 border rounded text-gray-600"
+                >library</a
+              >
+              <a href="#" class="text-sm px-3 py-1 border rounded text-gray-600"
+                >exam tips</a
+              >
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-[#8c1d23] text-white px-4 py-3 shadow-lg opacity-0 pointer-events-none transition-opacity duration-500"
+    >
+      ↑ Top
+    </button>
+    <!-- FOOTER SECTION -->
+    <footer class="bg-[#111] text-gray-300 pt-16 pb-8">
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        <!-- Logo + About -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="img/logo.png" alt="Logo" class="h-10 w-10" />
+            <h2 class="text-xl font-semibold text-white">Brookside School</h2>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Nurturing minds. Building futures. Brookside School is dedicated to
+            academic excellence, character development, and lifelong learning.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="index.html" class="hover:text-[#8c1d23] transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Courses</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Events</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Blog</a>
+            </li>
+            <li>
+              <a
+                href="reservations.html"
+                class="hover:text-[#8c1d23] transition"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">Contact Us</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <span class="font-medium">Address:</span> P.O. Box 697, Entebbe,
+              Plot 8, Market Street, Entebbe Town
+            </li>
+            <li>
+              <span class="font-medium">Phone:</span> +256 (0) 414 323 641
+            </li>
+            <li>
+              <span class="font-medium">Email:</span> bse09s2021@gmail.com
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">
+            Stay Updated
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Subscribe to our newsletter to get the latest updates and
+            announcements.
+          </p>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full px-3 py-2 text-sm text-gray-800 rounded-l focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="bg-[#8c1d23] hover:bg-[#a5282d] px-4 py-2 text-white rounded-r text-sm font-semibold transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div
+        class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500"
+      >
+        © <span id="year"></span> Brookside School. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+    <script>
+      const backToTopBtn = document.getElementById("backToTop");
+
+      // Function to handle fade-in/out
+      function handleScroll() {
+        if (window.scrollY > 300) {
+          backToTopBtn.style.opacity = "1";
+          backToTopBtn.style.pointerEvents = "auto"; // Enable clicking
+        } else {
+          backToTopBtn.style.opacity = "0";
+          backToTopBtn.style.pointerEvents = "none"; // Disable clicking
+        }
+      }
+
+      // Listen to scroll event
+      window.addEventListener("scroll", handleScroll);
+
+      // Smooth scroll to top
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Initial check in case page is loaded scrolled
+      handleScroll();
+    </script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      AOS.init({ duration: 900, once: true, easing: "ease-in-out" });
+
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("bg-black/90", "shadow-md");
+        } else {
+          navbar.classList.remove("bg-black/90", "shadow-md");
+        }
+      });
+    </script>
+  </body>
+</html>

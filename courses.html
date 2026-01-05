@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses | Brookside Academy</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script
+    src="https://kit.fontawesome.com/a076d05399.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <body class="bg-[#f9f9f9] text-gray-800">
+    <!-- HERO SECTION -->
+    <section
+      class="relative bg-gradient-to-r from-[#8c1d23] to-[#b52b31] text-white py-24 text-center"
+      style="
+        background-image: url('img/courses.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      "
+    >
+      <header
+        id="navbar"
+        class="fixed top-0 left-0 w-full z-20 shadow-md bg-black/50 backdrop-blur-lg"
+      >
+        <div
+          class="container mx-auto px-6 py-3 flex items-center justify-between"
+        >
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="img/logo.png" alt="Logo" class="h-10 w-10" />
+            <h1 class="text-2xl font-semibold text-white">Brookside School</h1>
+          </a>
+
+          <!-- DESKTOP NAV -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="index.html" class="text-white hover:text-[#d4a017]"
+              >Home</a
+            >
+            <a href="courses.html" class="text-white hover:text-[#d4a017]"
+              >Activities</a
+            >
+            <a href="about.html" class="text-[#d4a017] font-semibold"
+              >About Us</a
+            >
+            <a href="events.html" class="text-white hover:text-[#d4a017]"
+              >Events</a
+            >
+            <a href="blog.html" class="text-white hover:text-[#d4a017]">Blog</a>
+            <a href="contacts.html" class="text-white hover:text-[#d4a017]"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Desktop Apply Button -->
+          <div class="hidden md:flex items-center gap-4">
+            <a
+              href="apply.html"
+              class="bg-[#8c1d23] hover:bg-[#a72b33] text-white font-semibold px-8 py-3 rounded-full transition"
+            >
+              APPLY NOW
+            </a>
+          </div>
+
+          <!-- MOBILE MENU BUTTON -->
+          <button id="menuBtn" class="md:hidden text-white">
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden flex flex-col bg-black/95 text-white space-y-4 py-6 px-6 absolute top-full left-0 w-full z-30"
+        >
+          <a href="index.html" class="block text-lg hover:text-[#d4a017]"
+            >Home</a
+          >
+          <a href="courses.html" class="block text-lg hover:text-[#d4a017]"
+            >Activities</a
+          >
+          <a href="about.html" class="block text-lg hover:text-[#d4a017]"
+            >About Us</a
+          >
+          <a href="events.html" class="block text-lg hover:text-[#d4a017]"
+            >Events</a
+          >
+          <a href="blog.html" class="block text-lg hover:text-[#d4a017]"
+            >Blog</a
+          >
+          <a href="contacts.html" class="block text-lg hover:text-[#d4a017]"
+            >Contact</a
+          >
+
+          <a
+            href="apply.html"
+            class="block bg-[#8c1d23] text-white text-center py-3 rounded-full font-semibold mt-2"
+          >
+            APPLY NOW
+          </a>
+        </div>
+      </header>
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h1 class="text-5xl font-bold mb-3">
+          Our <span class="text-[#ffd54f]">Subjects & Activities</span>
+        </h1>
+        <p class="text-lg text-gray-100">
+          Nurturing young minds through fun, creativity, and quality education.
+        </p>
+      </div>
+      <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+    </section>
+
+    <!-- SUBJECT CATEGORIES -->
+    <section class="py-12 text-center">
+      <h2 class="text-2xl font-semibold mb-8 text-[#111]">
+        Explore Our Learning Areas
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <button
+          data-category="all"
+          class="category-btn px-6 py-2 bg-[#8c1d23] text-white rounded-full hover:bg-[#a5282d] transition"
+        >
+          All
+        </button>
+        <button
+          data-category="core"
+          class="category-btn px-6 py-2 border border-[#8c1d23] text-[#8c1d23] rounded-full hover:bg-[#8c1d23] hover:text-white transition"
+        >
+          Core Subjects
+        </button>
+        <button
+          data-category="arts"
+          class="category-btn px-6 py-2 border border-[#8c1d23] text-[#8c1d23] rounded-full hover:bg-[#8c1d23] hover:text-white transition"
+        >
+          Creative Arts
+        </button>
+        <button
+          data-category="sports"
+          class="category-btn px-6 py-2 border border-[#8c1d23] text-[#8c1d23] rounded-full hover:bg-[#8c1d23] hover:text-white transition"
+        >
+          Sports
+        </button>
+        <button
+          data-category="clubs"
+          class="category-btn px-6 py-2 border border-[#8c1d23] text-[#8c1d23] rounded-full hover:bg-[#8c1d23] hover:text-white transition"
+        >
+          Clubs
+        </button>
+      </div>
+    </section>
+
+    <!-- SUBJECTS GRID -->
+    <section class="py-16 bg-white">
+      <div
+        class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+      >
+        <!-- Subject Card -->
+        <div
+          data-category="core"
+          class="subject-card bg-[#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/english.avif"
+            alt="English"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">
+            English Language
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Building strong reading, writing, and communication skills through
+            stories and fun activities.
+          </p>
+        </div>
+        <!-- Subject Card -->
+        <div
+          data-category="core"
+          class="subject-card bg-[#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/15.jpg"
+            alt="English"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">Literacy A</h3>
+          <p class="text-gray-600 mb-4">
+            Building strong reading, writing, and communication skills through
+            stories and fun activities.
+          </p>
+        </div>
+        <!-- Subject Card -->
+        <div
+          data-category="core"
+          class="subject-card bg-[#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/19.jpg"
+            alt="English"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">Literacy B</h3>
+          <p class="text-gray-600 mb-4">
+            Building strong reading, writing, and communication skills through
+            stories and fun activities.
+          </p>
+        </div>
+        <!-- Subject Card -->
+        <div
+          data-category="core"
+          class="subject-card [#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/math.jpg"
+            alt="Maths"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">Mathematics</h3>
+          <p class="text-gray-600 mb-4">
+            Making numbers exciting with games, puzzles, and real-life
+            problem-solving.
+          </p>
+        </div>
+
+        <!-- Subject Card -->
+        <div
+          data-category="core"
+          class="subject-card [#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/science.webp"
+            alt="Science"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">Science</h3>
+          <p class="text-gray-600 mb-4">
+            Exploring nature, experiments, and discoveries that spark curiosity
+            and learning.
+          </p>
+        </div>
+        <div
+          data-category="core"
+          class="subject-card [#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/14.jpg"
+            alt="Science"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">Social Studies</h3>
+          <p class="text-gray-600 mb-4">
+            Exploring nature, experiments, and discoveries that spark curiosity
+            and learning.
+          </p>
+        </div>
+
+        <!-- Subject Card -->
+        <div
+          data-category="arts"
+          class="subject-card bg-[#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/16.jpg"
+            alt="Art"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">
+            Music, Dance, and Drama Classes
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Encouraging imagination through painting, drawing, music, and drama
+            sessions.
+          </p>
+        </div>
+        <!-- Subject Card -->
+        <div
+          data-category="arts"
+          class="subject-card bg-[#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/17.jpg"
+            alt="Art"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">Piano Classes</h3>
+          <p class="text-gray-600 mb-4">
+            Encouraging imagination through painting, drawing, music, and drama
+            sessions.
+          </p>
+        </div>
+
+        <!-- Subject Card -->
+        <div
+          data-category="sports"
+          class="subject-card bg-[#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/18.jpg"
+            alt="Sports"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">
+            Swimming Classes
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Promoting teamwork, fitness, and fun through football, athletics,
+            swimming, and more.
+          </p>
+        </div>
+        <!-- Subject Card -->
+        <div
+          data-category="sports"
+          class="subject-card bg-[#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/sports.jpg"
+            alt="Sports"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">Football</h3>
+          <p class="text-gray-600 mb-4">
+            Promoting teamwork, fitness, and fun through football, athletics,
+            swimming, and more.
+          </p>
+        </div>
+
+        <!-- Subject Card -->
+        <div
+          data-category="clubs"
+          class="subject-card [#f9f9f9] rounded-2xl shadow-md hover:-translate-y-2 transition p-6 text-center"
+        >
+          <img
+            src="img/clubs.webp"
+            alt="Clubs"
+            class="rounded-lg mb-5 w-full h-48 object-cover"
+          />
+          <h3 class="text-xl font-semibold mb-2 text-[#111]">
+            Clubs & Societies
+          </h3>
+          <p class="text-gray-600 mb-4">
+            From debate and music to scouts and drama — we nurture every child’s
+            passion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section
+      class="bg-gradient-to-r from-[#8c1d23] to-[#000] py-20 px-6 text-center text-white"
+    >
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-4xl font-bold mb-4">Stay Updated.</h2>
+        <p class="text-lg text-gray-100 mb-10">
+          Subscribe to our newsletter for the latest course updates and campus
+          news.
+        </p>
+        <form
+          class="flex flex-col sm:flex-row items-center justify-center bg-white rounded-full shadow-xl overflow-hidden p-2 max-w-2xl mx-auto"
+        >
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            class="flex-grow px-6 py-3 text-gray-600 text-lg focus:outline-none rounded-full"
+          />
+          <button
+            type="submit"
+            class="mt-3 sm:mt-0 sm:ml-3 bg-[#8c1d23] hover:bg-[#a7242b] text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-[#8c1d23] text-white px-4 py-3 shadow-lg opacity-0 pointer-events-none transition-opacity duration-500"
+    >
+      ↑ Top
+    </button>
+    <!-- FOOTER SECTION -->
+    <footer class="bg-[#111] text-gray-300 pt-16 pb-8">
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        <!-- Logo + About -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="img/logo.png" alt="Logo" class="h-10 w-10" />
+            <h2 class="text-xl font-semibold text-white">Brookside School</h2>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Nurturing minds. Building futures. Brookside School is dedicated to
+            academic excellence, character development, and lifelong learning.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="index.html" class="hover:text-[#8c1d23] transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="courses.html" class="hover:text-[#8c1d23] transition"
+                >Activites
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="hover:text-[#8c1d23] transition"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="events.html" class="hover:text-[#8c1d23] transition"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a href="blog.html" class="hover:text-[#8c1d23] transition"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a href="contacts.html" class="hover:text-[#8c1d23] transition"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">Contact Us</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <span class="font-medium">Address:</span> P.O. Box 697, Entebbe,
+              Plot 8, Market Street, Entebbe Town
+            </li>
+            <li>
+              <span class="font-medium">Phone:</span> +256 (0) 414 323 641
+            </li>
+            <li>
+              <span class="font-medium">Email:</span> bse09s2021@gmail.com
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">
+            Stay Updated
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Subscribe to our newsletter to get the latest updates and
+            announcements.
+          </p>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full px-3 py-2 text-sm text-gray-800 rounded-l focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="bg-[#8c1d23] hover:bg-[#a5282d] px-4 py-2 text-white rounded-r text-sm font-semibold transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div
+        class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500"
+      >
+        © <span id="year"></span> Brookside School. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+    <script>
+      const buttons = document.querySelectorAll(".category-btn");
+      const cards = document.querySelectorAll(".subject-card");
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const category = btn.dataset.category;
+
+          // Active button styling
+          buttons.forEach((b) =>
+            b.classList.remove("bg-[#8c1d23]", "text-white")
+          );
+          btn.classList.add("bg-[#8c1d23]", "text-white");
+
+          // Filtering logic
+          cards.forEach((card) => {
+            if (category === "all" || card.dataset.category === category) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+
+    <script>
+      const backToTopBtn = document.getElementById("backToTop");
+
+      // Function to handle fade-in/out
+      function handleScroll() {
+        if (window.scrollY > 300) {
+          backToTopBtn.style.opacity = "1";
+          backToTopBtn.style.pointerEvents = "auto"; // Enable clicking
+        } else {
+          backToTopBtn.style.opacity = "0";
+          backToTopBtn.style.pointerEvents = "none"; // Disable clicking
+        }
+      }
+
+      // Listen to scroll event
+      window.addEventListener("scroll", handleScroll);
+
+      // Smooth scroll to top
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Initial check in case page is loaded scrolled
+      handleScroll();
+    </script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+
+        if (window.scrollY > 50) {
+          // Scrolled: fade in black bg + white shadow
+          navbar.classList.add("bg-black/90");
+          navbar.classList.add("shadow-[0_2px_15px_0_rgba(255,255,255,0.3)]");
+          navbar.classList.remove("bg-transparent");
+        } else {
+          // At top: fade back to transparent
+          navbar.classList.remove("bg-black/90");
+          navbar.classList.remove(
+            "shadow-[0_2px_15px_0_rgba(255,255,255,0.3)]"
+          );
+          navbar.classList.add("bg-transparent");
+        }
+      });
+    </script>
+  </body>
+</html>

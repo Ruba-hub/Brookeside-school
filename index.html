@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brookside Academy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000; /* optional: blends with dark sections */
+      }
+
+      /* Fade-in + slide from left animation */
+      @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .animate-heroText {
+        animation: fadeSlideIn 1s ease-out forwards;
+      }
+      @keyframes slideInLeft {
+        0% {
+          transform: translateX(-50px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .animate-heroText {
+        animation: slideInLeft 1s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-[#f9f9f9] text-white">
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-[110vh] bg-cover bg-center flex items-center justify-start"
+      style="
+        background-image: url('img/hero.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      "
+    >
+      <header
+        id="navbar"
+        class="fixed top-0 left-0 w-full z-20 shadow-md bg-black/50 backdrop-blur-lg"
+      >
+        <div
+          class="container mx-auto px-6 py-3 flex items-center justify-between"
+        >
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="img/logo.png" alt="Logo" class="h-10 w-10" />
+            <h1 class="text-2xl font-semibold text-white">Brookside School</h1>
+          </a>
+
+          <!-- DESKTOP NAV -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="index.html" class="text-[#d4a017] font-semibold">Home</a>
+            <a href="courses.html" class="text-white hover:text-[#d4a017]"
+              >Activities</a
+            >
+            <a href="about.html" class="text-white hover:text-[#d4a017]"
+              >About Us</a
+            >
+            <a href="events.html" class="text-white hover:text-[#d4a017]"
+              >Events</a
+            >
+            <a href="blog.html" class="text-white hover:text-[#d4a017]">Blog</a>
+            <a href="contacts.html" class="text-white hover:text-[#d4a017]"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Desktop Apply Button -->
+          <div class="hidden md:flex items-center gap-4">
+            <a
+              href="apply.html"
+              class="bg-[#8c1d23] hover:bg-[#a72b33] text-white font-semibold px-8 py-3 rounded-full transition"
+            >
+              APPLY NOW
+            </a>
+          </div>
+
+          <!-- MOBILE MENU BUTTON -->
+          <button id="menuBtn" class="md:hidden text-white">
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <!-- MOBILE MENU DROPDOWN (FIXED VERSION) -->
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden flex flex-col bg-black/95 text-white space-y-4 py-6 px-6 absolute top-full left-0 w-full z-30"
+        >
+          <a href="index.html" class="block text-lg hover:text-[#d4a017]"
+            >Home</a
+          >
+          <a href="courses.html" class="block text-lg hover:text-[#d4a017]"
+            >Activities</a
+          >
+          <a href="about.html" class="block text-lg hover:text-[#d4a017]"
+            >About Us</a
+          >
+          <a href="events.html" class="block text-lg hover:text-[#d4a017]"
+            >Events</a
+          >
+          <a href="blog.html" class="block text-lg hover:text-[#d4a017]"
+            >Blog</a
+          >
+          <a href="contacts.html" class="block text-lg hover:text-[#d4a017]"
+            >Contact</a
+          >
+
+          <a
+            href="apply.html"
+            class="block bg-[#8c1d23] text-white text-center py-3 rounded-full font-semibold mt-2"
+          >
+            APPLY NOW
+          </a>
+        </div>
+      </header>
+
+      <div class="absolute inset-0 z-0">
+        <div
+          class="slide bg-cover bg-center absolute inset-0 transition-opacity duration-1000 opacity-100"
+          style="background-image: url('img/hero1.webp')"
+        ></div>
+        <div
+          class="slide bg-cover bg-center absolute inset-0 transition-opacity duration-1000 opacity-0"
+          style="background-image: url('img/hero2.jpg')"
+        ></div>
+        <div
+          class="slide bg-cover bg-center absolute inset-0 transition-opacity duration-1000 opacity-0"
+          style="background-image: url('img/hero3.jpg')"
+        ></div>
+      </div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      <!-- Content -->
+      <div
+        class="relative z-10 px-6 md:px-20 max-w-3xl animate-heroText text-white"
+      >
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          Better <span class="text-[#8c1d23]">Education</span><br />
+          For a Brighter Future
+        </h1>
+        <p class="text-lg text-gray-200 mb-8">
+          Empowering students to learn, grow, and achieve their dreams.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4">
+          <a
+            href="#"
+            class="bg-[#8c1d23] hover:bg-[#a72b33] text-white font-semibold px-8 py-3 rounded-full transition"
+          >
+            Join Us
+          </a>
+          <a
+            href="about.html"
+            class="border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-black transition"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- INFO HIGHLIGHT SECTION -->
+    <section class="bg-[#8c1d23] py-16">
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-white text-center"
+      >
+        <!-- Programs -->
+        <div
+          class="flex flex-col items-center space-y-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <div class="bg-[#d4a017] p-6 rounded-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12 text-[#eee]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l6.16-3.422A12.083 12.083 0 0112 20.944a12.083 12.083 0 01-6.16-10.366L12 14z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Programs</h3>
+          <p class="text-gray-200 max-w-xs">
+            Offering programs taught by the best facilitators globally.
+          </p>
+        </div>
+
+        <!-- Certificate -->
+        <div
+          class="flex flex-col items-center space-y-4"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          <div class="bg-[#d4a017] p-6 rounded-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12 text-[#eee]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 20h9"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4h9M5 20h1a2 2 0 002-2V6a2 2 0 00-2-2H5v16z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Growing Skills for the Future</h3>
+          <p class="text-gray-200 max-w-xs">
+            Fun learning programs that help you grow your skills and prepare
+            pupils for future opportunities.
+          </p>
+        </div>
+
+        <!-- Affordability -->
+        <div
+          class="flex flex-col items-center space-y-4"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <div class="bg-[#d4a017] p-6 rounded-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12 text-[#eee]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 14l2-2 4 4m5-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Affordability</h3>
+          <p class="text-gray-200 max-w-xs">
+            We make quality learning accessible so every child can enjoy great
+            education.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="bg-[#f9f9f9] py-20">
+      <div
+        class="container mx-auto px-6 grid md:grid-cols-4 gap-6 items-stretch"
+      >
+        <!-- Left Column -->
+        <div
+          class="bg-[#8c1d23] text-white p-10 flex flex-col justify-center rounded-lg shadow-lg"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <h2 class="text-3xl font-bold mb-4">Why Choose <br />Our School?</h2>
+          <p class="text-gray-100 mb-8 leading-relaxed">
+            At Brookside School, we go beyond teaching — we inspire. Our
+            programs foster creativity, confidence, and compassion, helping
+            pupils build a strong foundation for their future.
+          </p>
+          <a
+            href="about.html"
+            class="bg-white/15 hover:bg-white text-white hover:text-[#8c1d23] font-semibold px-6 py-3 transition-all duration-300 flex items-center justify-center gap-2 w-fit"
+          >
+            Learn More
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Feature 1 -->
+        <div
+          class="bg-white border border-gray-200 p-10 rounded-lg hover:shadow-md transition-all duration-300"
+          data-aos="fade-left"
+          data-aos-duration="1500"
+        >
+          <div class="flex justify-center mb-4">
+            <div
+              class="bg-[#8c1d23]/10 p-4 rounded-full hover:bg-[#a5282d] transition-all duration-300"
+            >
+              <svg
+                class="w-10 h-10 text-[#000]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l6.16-3.422A12.083 12.083 0 0112 20.944a12.083 12.083 0 01-6.16-10.366L12 14z"
+                />
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold text-[#111] mb-3">
+            Quality Education
+          </h3>
+          <p class="text-gray-600">
+            Academic excellence balanced with creativity and innovation.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div
+          class="bg-white border border-gray-200 p-10 rounded-lg hover:shadow-md transition-all duration-300"
+          data-aos="fade-left"
+          data-aos-duration="2000"
+        >
+          <div class="flex justify-center mb-4">
+            <div
+              class="bg-[#8c1d23]/10 p-4 rounded-full hover:bg-[#a5282d] transition-all duration-300"
+            >
+              <svg
+                class="w-10 h-10 text-[#000]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold text-[#111] mb-3">
+            Experienced Teachers
+          </h3>
+          <p class="text-gray-600">
+            Dedicated educators who guide and inspire every learner.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div
+          class="bg-white border border-gray-200 p-10 rounded-lg hover:shadow-md transition-all duration-300"
+          data-aos="fade-left"
+          data-aos-duration="2500"
+        >
+          <div class="flex justify-center mb-4">
+            <div
+              class="bg-[#8c1d23]/10 p-4 rounded-full hover:bg-[#a5282d] transition-all duration-300"
+            >
+              <svg
+                class="w-10 h-10 text-[#000]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold text-[#111] mb-3">
+            Modern Facilities
+          </h3>
+          <p class="text-gray-600">
+            Equipped with the latest technology for innovative learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-20 relative overflow-hidden">
+      <div
+        class="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- Left Text Block -->
+        <div class="relative" data-aos="fade-left" data-aos-duration="2000">
+          <!-- Decorative Accent Line -->
+          <div
+            class="absolute -left-6 top-2 w-1 h-16 bg-[#8c1d23] rounded-full hidden md:block"
+          ></div>
+
+          <p
+            class="uppercase tracking-[0.15em] text-[#8c1d23] mb-3 font-semibold"
+          >
+            Brookside School, All The Time
+          </p>
+
+          <h2
+            class="text-4xl md:text-5xl font-bold text-[#111] mb-6 leading-tight"
+          >
+            Explore <span class="text-[#8c1d23]">Brookside School</span>
+          </h2>
+
+          <div class="flex items-end gap-3 mb-6">
+            <h3 class="text-6xl font-extrabold text-[#8c1d23] leading-none">
+              24
+            </h3>
+            <p class="uppercase tracking-widest text-gray-600 font-medium mb-1">
+              Hours
+            </p>
+          </div>
+
+          <p class="text-gray-600 leading-relaxed max-w-lg text-lg mb-8">
+            There’s always something amazing happening at Brookside. Whether
+            it’s on campus or around the world, our students, staff, and alumni
+            are out seizing the day — as shown in the snapshots below.
+          </p>
+
+          <a
+            href="#gallery"
+            class="inline-block bg-[#8c1d23] hover:bg-[#a5282d] text-white px-8 py-3 font-semibold shadow-md transition-all duration-300"
+          >
+            View Gallery
+          </a>
+        </div>
+
+        <!-- Right Accent / Optional Image -->
+        <div class="relative" data-aos="fade-right" data-aos-duration="2000">
+          <div
+            class="w-full h-[400px] shadow-xl bg-cover bg-center"
+            style="background-image: url('img/1.jpg')"
+          ></div>
+          <!-- Gradient overlay effect -->
+          <div
+            class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/40 to-transparent"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORE SCHOOL SECTION -->
+    <section id="gallery" class="bg-white py-20" data-aos="fade-up">
+      <div class="container mx-auto px-6 lg:px-12">
+        <div class="grid items-center">
+          <!-- Right Image Collage with Hover Overlay -->
+          <div class="grid grid-cols-3 gap-0">
+            <!-- Image Wrapper Template -->
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/1.jpg"
+                alt="Campus life"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/2.jpg"
+                alt="Students studying"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/3.jpg"
+                alt="Classroom"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/4.jpg"
+                alt="Student"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/5.jpg"
+                alt="Graduation"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/6.jpg"
+                alt="Cafe scene"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/7.jpg"
+                alt="Design work"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/8.webp"
+                alt="Teacher"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+
+            <div class="relative overflow-hidden bg-cover bg-no-repeat">
+              <img
+                src="img/9.jpg"
+                alt="Happy student"
+                class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-[#8c1d23] via-black to-[#8c1d23] opacity-0 hover:opacity-70 transition duration-500 ease-in-out"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-6 lg:px-20">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+          <!-- Stat 1 -->
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h2
+              class="text-5xl font-extrabold text-[#8c1d23] counter"
+              data-target="500"
+            >
+              0
+            </h2>
+            <p class="mt-2 text-gray-600 text-lg">Students</p>
+          </div>
+          <!-- Stat 2 -->
+          <div data-aos="fade-up" data-aos-delay="300">
+            <h2
+              class="text-5xl font-extrabold text-[#8c1d23] counter"
+              data-target="42"
+            >
+              0
+            </h2>
+            <p class="mt-2 text-gray-600 text-lg">Events</p>
+          </div>
+          <!-- Stat 3 -->
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h2
+              class="text-5xl font-extrabold text-[#8c1d23] counter"
+              data-target="20"
+            >
+              0
+            </h2>
+            <p class="mt-2 text-gray-600 text-lg">Courses</p>
+          </div>
+
+          <!-- Stat 3 -->
+
+          <!-- Stat 4 -->
+          <div data-aos="fade-up" data-aos-delay="400">
+            <h2
+              class="text-5xl font-extrabold text-[#8c1d23] counter"
+              data-target="24"
+            >
+              0
+            </h2>
+            <p class="mt-2 text-gray-600 text-lg">Trainers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-[#eee]" data-aos="fade-up" data-aos-delay="400">
+      <div class="container mx-auto px-6 lg:px-12">
+        <div class="text-center mb-12">
+          <p class="uppercase tracking-wide text-gray-500 mb-2">Our Programs</p>
+          <h2 class="text-4xl font-bold text-[#111]">
+            What <span class="text-[#8c1d23]">We Offer</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-yellow-500 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="eye" class="w-7 h-7 text-yellow-500"></i>
+            <h3 class="font-semibold text-gray-800">Swimming Classes</h3>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="infinity" class="w-7 h-7 text-blue-600"></i>
+            <h3 class="font-semibold text-gray-800">Well Stocked library</h3>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-green-600 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="graduation-cap" class="w-7 h-7 text-pink-500"></i>
+            <h3 class="font-semibold text-gray-800">Music Classes</h3>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-purple-500 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="hexagon" class="w-7 h-7 text-purple-500"></i>
+            <h3 class="font-semibold text-gray-800">Dance Classes</h3>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="shuffle" class="w-7 h-7 text-blue-400"></i>
+            <h3 class="font-semibold text-gray-800">Drama Classes</h3>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-orange-400 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="star" class="w-7 h-7 text-orange-400"></i>
+            <h3 class="font-semibold text-gray-800">Play Area</h3>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-cyan-500 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="grid" class="w-7 h-7 text-cyan-500"></i>
+            <h3 class="font-semibold text-gray-800">Breackfast and Lunch</h3>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-indigo-500 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="video" class="w-7 h-7 text-indigo-500"></i>
+            <h3 class="font-semibold text-gray-800">Quiet space for napping</h3>
+          </div>
+
+          <!-- Card 9 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-yellow-700 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="command" class="w-7 h-7 text-yellow-700"></i>
+            <h3 class="font-semibold text-gray-800">In compound Church</h3>
+          </div>
+
+          <!-- Card 10 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-pink-600 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="dribbble" class="w-7 h-7 text-pink-600"></i>
+            <h3 class="font-semibold text-gray-800">Professional Saff</h3>
+          </div>
+
+          <!-- Card 11 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-orange-500 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="activity" class="w-7 h-7 text-orange-500"></i>
+            <h3 class="font-semibold text-gray-800">Video room</h3>
+          </div>
+
+          <!-- Card 12 -->
+          <div
+            class="flex items-center space-x-3 border border-gray-400 rounded-xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300"
+          >
+            <i data-lucide="sun" class="w-7 h-7 text-green-500"></i>
+            <h3 class="font-semibold text-gray-800">Sports</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="bg-gradient-to-r from-[#8c1d23] to-[#000] py-20 px-6 md:px-0"
+      data-aos="fade-up"
+      data-aos-delay="400"
+    >
+      <div class="max-w-3xl mx-auto text-center text-white">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Newsletter.</h2>
+        <p class="text-lg text-gray-100 mb-10">
+          Subscribe to our newsletter for discounts, promos, and much more.
+        </p>
+
+        <form
+          class="flex flex-col sm:flex-row items-center justify-center bg-white rounded-full shadow-xl overflow-hidden p-2 max-w-2xl mx-auto"
+        >
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            class="flex-grow px-6 py-3 text-gray-600 text-lg focus:outline-none rounded-full"
+          />
+          <button
+            type="submit"
+            class="mt-3 sm:mt-0 sm:ml-3 bg-[#8c1d23] hover:bg-[#a7242b] text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-[#8c1d23] text-white px-4 py-3 shadow-lg opacity-0 pointer-events-none transition-opacity duration-500"
+    >
+      ↑ Top
+    </button>
+    <!-- FOOTER SECTION -->
+    <footer class="bg-[#111] text-gray-300 pt-16 pb-8">
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        <!-- Logo + About -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="img/logo.png" alt="Logo" class="h-10 w-10" />
+            <h2 class="text-xl font-semibold text-white">Brookside School</h2>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Nurturing minds. Building futures. Brookside School is dedicated to
+            academic excellence, character development, and lifelong learning.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="index.html" class="hover:text-[#8c1d23] transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Courses</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Events</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Blog</a>
+            </li>
+            <li>
+              <a
+                href="reservations.html"
+                class="hover:text-[#8c1d23] transition"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">Contact Us</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <span class="font-medium">Address:</span> P.O. Box 697, Entebbe,
+              Plot 8, Market Street, Entebbe Town
+            </li>
+            <li>
+              <span class="font-medium">Phone:</span> +256 (0) 414 323 641
+            </li>
+            <li>
+              <span class="font-medium">Email:</span> bse09s2021@gmail.com
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">
+            Stay Updated
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Subscribe to our newsletter to get the latest updates and
+            announcements.
+          </p>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full px-3 py-2 text-sm text-gray-800 rounded-l focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="bg-[#8c1d23] hover:bg-[#a5282d] px-4 py-2 text-white rounded-r text-sm font-semibold transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div
+        class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500"
+      >
+        © <span id="year"></span> Brookside School. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <script>
+      // Auto-update year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+
+        if (window.scrollY > 50) {
+          // Scrolled: fade in black bg + white shadow
+          navbar.classList.add("bg-black/90");
+          navbar.classList.add("shadow-[0_2px_15px_0_rgba(255,255,255,0.3)]");
+          navbar.classList.remove("bg-transparent");
+        } else {
+          // At top: fade back to transparent
+          navbar.classList.remove("bg-black/90");
+          navbar.classList.remove(
+            "shadow-[0_2px_15px_0_rgba(255,255,255,0.3)]"
+          );
+          navbar.classList.add("bg-transparent");
+        }
+      });
+    </script>
+    <script>
+      const heroSection = document.querySelector("section");
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        // Move the background slower than the scroll
+        heroSection.style.backgroundPosition = `center ${scrollY * 0.5}px`;
+      });
+    </script>
+    <script>
+      const backToTopBtn = document.getElementById("backToTop");
+
+      // Function to handle fade-in/out
+      function handleScroll() {
+        if (window.scrollY > 300) {
+          backToTopBtn.style.opacity = "1";
+          backToTopBtn.style.pointerEvents = "auto"; // Enable clicking
+        } else {
+          backToTopBtn.style.opacity = "0";
+          backToTopBtn.style.pointerEvents = "none"; // Disable clicking
+        }
+      }
+
+      // Listen to scroll event
+      window.addEventListener("scroll", handleScroll);
+
+      // Smooth scroll to top
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Initial check in case page is loaded scrolled
+      handleScroll();
+    </script>
+    <!-- Slide Animation -->
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
+
+      function showNextSlide() {
+        slides[currentSlide].style.opacity = "0";
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.opacity = "1";
+      }
+
+      // Change slide every 5 seconds
+      setInterval(showNextSlide, 5000);
+    </script>
+    <script>
+      AOS.init({
+        duration: 1000, // animation duration in ms
+        once: false, // animation happens only once
+        easing: "ease-in-out",
+      });
+    </script>
+    <script>
+      // Count-up animation for stats
+      const counters = document.querySelectorAll(".counter");
+      const speed = 100; // lower is faster
+
+      const animateCounters = () => {
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(updateCount, 20);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCount();
+        });
+      };
+
+      // Run animation when section comes into view
+      const section = document.querySelector("section.bg-gray-50");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            animateCounters();
+            observer.disconnect(); // run only once
+          }
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(section);
+    </script>
+  </body>
+</html>

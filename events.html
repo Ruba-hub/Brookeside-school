@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events | Brookside Academy</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script
+    src="https://kit.fontawesome.com/a076d05399.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="icon" type="image/png" href="img/logo.png" />
+
+  <body class="bg-white text-gray-800 font-sans">
+    <!-- HERO SECTION -->
+    <!-- NAVBAR (shared with index.html style) -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-20 shadow-md bg-black/50 backdrop-blur-lg"
+    >
+      <div
+        class="container mx-auto px-6 py-3 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="img/logo.png" alt="Logo" class="h-10 w-10" />
+          <h1 class="text-2xl font-semibold text-white">Brookside School</h1>
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-white hover:text-[#d4a017]">Home</a>
+          <a href="courses.html" class="text-white hover:text-[#d4a017]"
+            >Activities</a
+          >
+          <a href="about.html" class="text-white hover:text-[#d4a017]"
+            >About Us</a
+          >
+          <a href="events.html" class="text-[#d4a017] font-semibold">Events</a>
+          <a href="blog.html" class="text-white hover:text-[#d4a017]">Blog</a>
+          <a href="contacts.html" class="text-white hover:text-[#d4a017]"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Desktop Apply Button -->
+        <div class="hidden md:flex items-center gap-4">
+          <a
+            href="apply.html"
+            class="bg-[#8c1d23] hover:bg-[#a72b33] text-white font-semibold px-8 py-3 rounded-full transition"
+          >
+            APPLY NOW
+          </a>
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button id="menuBtn" class="md:hidden text-white">
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU DROPDOWN -->
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden flex flex-col bg-black/95 text-white space-y-4 py-6 px-6 absolute top-full left-0 w-full z-30"
+      >
+        <a href="index.html" class="block text-lg hover:text-[#d4a017]">Home</a>
+        <a href="courses.html" class="block text-lg hover:text-[#d4a017]"
+          >Activities</a
+        >
+        <a href="about.html" class="block text-lg hover:text-[#d4a017]"
+          >About Us</a
+        >
+        <a href="events.html" class="block text-lg hover:text-[#d4a017]"
+          >Events</a
+        >
+        <a href="blog.html" class="block text-lg hover:text-[#d4a017]">Blog</a>
+        <a href="contacts.html" class="block text-lg hover:text-[#d4a017]"
+          >Contact</a
+        >
+
+        <a
+          href="apply.html"
+          class="block bg-[#8c1d23] text-white text-center py-3 rounded-full font-semibold mt-2"
+        >
+          APPLY NOW
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      class="relative min-h-[50vh] bg-cover bg-center flex items-center justify-start"
+      style="
+        background-image: url('img/party.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      "
+    >
+      <!-- Text Goes ABOVE overlay -->
+      <div class="container mx-auto px-6 py-20 text-white relative z-10">
+        <div class="max-w-3xl">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            School
+            <span class="text-[#8c1d23]">Events</span>
+          </h2>
+          <p class="text-lg text-gray-200">
+            Discover what’s happening at Brookside School — from major events
+            and celebrations to exciting student activities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Overlay goes BELOW everything -->
+      <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+    </section>
+    <!-- EVENTS SECTION (STYLE MATCHED TO YOUR IMAGE) -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-3xl font-bold text-center text-[#111] mb-12"
+          data-aos="fade-up"
+        >
+          Upcoming <span class="text-[#8c1d23]">Events</span>
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- CARD 1 -->
+          <div
+            class="bg-white shadow-lg rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+          >
+            <!-- Image + Date Badge -->
+            <div class="relative">
+              <img src="img/park.webp" class="w-full h-56 object-cover" />
+
+              <div
+                class="absolute top-4 left-4 bg-[#8c1d23] text-white rounded-lg p-3 text-center"
+              >
+                <p class="text-xl font-bold leading-none">21</p>
+                <p class="text-xs uppercase tracking-wider">Dec</p>
+              </div>
+            </div>
+
+            <!-- Title Bar -->
+            <div class="bg-[#333] text-white px-6 py-4">
+              <h3 class="text-lg font-semibold">A DAY IN THE PARK</h3>
+            </div>
+
+            <!-- Info Section -->
+            <div class="bg-green-400 p-6 text-white space-y-4">
+              <p class="flex items-center gap-2">
+                <i class="fas fa-map-marker-alt"></i>
+                New York, Times Square
+              </p>
+
+              <p class="flex items-center gap-2">
+                <i class="fas fa-clock"></i>
+                9:00 To 14:00
+              </p>
+
+              <div class="border-b border-white/50 my-3"></div>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque tincidunt rutrum.
+              </p>
+
+              <button
+                class="mt-4 bg-white text-[#111] px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition"
+              >
+                CHECK IT
+              </button>
+            </div>
+          </div>
+
+          <!-- DUPLICATE CARDS BELOW - CHANGE COLORS LIKE YOUR REFERENCE -->
+
+          <!-- CARD 2 -->
+          <div
+            class="bg-white shadow-lg rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+          >
+            <div class="relative">
+              <img src="img/artist.jpg" class="w-full h-56 object-cover" />
+
+              <div
+                class="absolute top-4 left-4 bg-[#8c1d23] text-white rounded-lg p-3 text-center"
+              >
+                <p class="text-xl font-bold leading-none">10</p>
+                <p class="text-xs uppercase">May</p>
+              </div>
+            </div>
+
+            <div class="bg-[#333] text-white px-6 py-4">
+              <h3 class="text-lg font-semibold">ARTIST AT SCHOOL</h3>
+            </div>
+
+            <div class="bg-sky-400 p-6 text-white space-y-4">
+              <p class="flex items-center gap-2">
+                <i class="fas fa-map-marker-alt"></i> New York, Times Square
+              </p>
+              <p class="flex items-center gap-2">
+                <i class="fas fa-clock"></i> 9:00 To 14:00
+              </p>
+              <div class="border-b border-white/50"></div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+              <button
+                class="mt-4 bg-white text-[#111] px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition"
+              >
+                CHECK IT
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="bg-white shadow-lg rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+          >
+            <div class="relative">
+              <img src="img/painting.jpeg" class="w-full h-56 object-cover" />
+
+              <div
+                class="absolute top-4 left-4 bg-[#8c1d23] text-white rounded-lg p-3 text-center"
+              >
+                <p class="text-xl font-bold leading-none">24</p>
+                <p class="text-xs uppercase">Mar</p>
+              </div>
+            </div>
+
+            <div class="bg-[#333] text-white px-6 py-4">
+              <h3 class="text-lg font-semibold">WATERCOLOR PAINT</h3>
+            </div>
+
+            <div class="bg-yellow-400 p-6 text-white space-y-4">
+              <p class="flex items-center gap-2">
+                <i class="fas fa-map-marker-alt"></i> New York, Times Square
+              </p>
+              <p class="flex items-center gap-2">
+                <i class="fas fa-clock"></i> 9:00 To 14:00
+              </p>
+              <div class="border-b border-white/50"></div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+              <button
+                class="mt-4 bg-white text-[#111] px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition"
+              >
+                CHECK IT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-[#8c1d23] text-white px-4 py-3 shadow-lg opacity-0 pointer-events-none transition-opacity duration-500"
+    >
+      ↑ Top
+    </button>
+    <!-- FOOTER SECTION -->
+    <footer class="bg-[#111] text-gray-300 pt-16 pb-8">
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        <!-- Logo + About -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="img/logo.png" alt="Logo" class="h-10 w-10" />
+            <h2 class="text-xl font-semibold text-white">Brookside School</h2>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Nurturing minds. Building futures. Brookside School is dedicated to
+            academic excellence, character development, and lifelong learning.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="index.html" class="hover:text-[#8c1d23] transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Courses</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Events</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#8c1d23] transition">Blog</a>
+            </li>
+            <li>
+              <a
+                href="reservations.html"
+                class="hover:text-[#8c1d23] transition"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">Contact Us</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <span class="font-medium">Address:</span> P.O. Box 697, Entebbe,
+              Plot 8, Market Street, Entebbe Town
+            </li>
+            <li>
+              <span class="font-medium">Phone:</span> +256 (0) 414 323 641
+            </li>
+            <li>
+              <span class="font-medium">Email:</span> bse09s2021@gmail.com
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#d4a017] mb-4">
+            Stay Updated
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Subscribe to our newsletter to get the latest updates and
+            announcements.
+          </p>
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full px-3 py-2 text-sm text-gray-800 rounded-l focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="bg-[#8c1d23] hover:bg-[#a5282d] px-4 py-2 text-white rounded-r text-sm font-semibold transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div
+        class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500"
+      >
+        © <span id="year"></span> Brookside School. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (navbar) {
+          if (window.scrollY > 50) {
+            navbar.classList.add("bg-black/90");
+            navbar.classList.add("shadow-[0_2px_15px_0_rgba(255,255,255,0.3)]");
+            navbar.classList.remove("bg-transparent");
+          } else {
+            navbar.classList.remove("bg-black/90");
+            navbar.classList.remove(
+              "shadow-[0_2px_15px_0_rgba(255,255,255,0.3)]"
+            );
+            navbar.classList.add("bg-transparent");
+          }
+        }
+      });
+    </script>
+    <script>
+      const backToTopBtn = document.getElementById("backToTop");
+      function handleScroll() {
+        if (window.scrollY > 300) {
+          backToTopBtn.style.opacity = "1";
+          backToTopBtn.style.pointerEvents = "auto";
+        } else {
+          backToTopBtn.style.opacity = "0";
+          backToTopBtn.style.pointerEvents = "none";
+        }
+      }
+      window.addEventListener("scroll", handleScroll);
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      handleScroll();
+    </script>
+    <script>
+      AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
+    </script>
+  </body>
+</html>
